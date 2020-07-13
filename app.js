@@ -126,22 +126,30 @@ class Triangle extends Shape{
     this.div.style.Color = "#ffc107";
     this.div.style.width = `0px`;
     this.div.style.height = `0px`;
-  this.div.style.borderLeft = ""+((this.size)/2) + "px solid #ffc107";
-      this.div.style.borderBottom= ""+((this.size)/2) + "px solid #ffc107";
-      this.div.style.borderRight = ""+((this.size)/2) + "px solid transparent";
-      this.div.style.borderTop = ""+((this.size)/2) + "px solid transparent";
-     this.div.style.cursor = `pointer`;
+  
+      this.div.style.borderBottom= ""+(this.size) + "px solid #ffc107";
+      this.div.style.borderRight = ""+(this.size) + "px solid transparent";
+     
         this.div.style.left = `${x}px`;
    
     this.div.style.position = "absolute";
     this.div.style.top = `${y}px`;
-    
-       this.div.addEventListener("click", () =>{
-         this.describe();
+    this.div.addEventListener("mousemove", (e) =>{
+        if(e.offsetX <= e.offsetY )
+            this.div.style.cursor = `pointer`;
+        else
+            this.div.style.cursor = `default`; 
         });
-  this.div.addEventListener("dblclick", () =>{
+      
+          this.div.addEventListener("click", (e) =>{
+              if(e.offsetX <= e.offsetY )
+                this.describe();
+        });
+this.div.addEventListener("dblclick", (e) =>{
+        if(e.offsetX <= e.offsetY )
           cont.removeChild(this.div);
         });
+        
         cont.append(this.div); 
         
     }
