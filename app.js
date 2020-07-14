@@ -16,6 +16,7 @@ class Square extends Shape{
     super(x, y, shape);
     this.size = size;
     this.div = document.createElement("div");
+     this.div.classList.add("opacity-1");
     this.div.style.backgroundColor = "#dc3545";
     this.div.style.width = `${size}px`;
     this.div.style.height = `${size}px`;
@@ -52,6 +53,7 @@ class Rectangle extends Shape{
     this.width = width;
     this.height = height;
     this.div = document.createElement("div");
+     this.div.classList.add("opacity-1");
     this.div.style.backgroundColor = "#28a745";
     this.div.style.width = `${width}px`;
     this.div.style.height = `${height}px`;
@@ -86,6 +88,7 @@ class Circle extends Shape{
     super(x, y, shape);
  this.radius = radius;
     this.div = document.createElement("div");
+    this.div.classList.add("opacity-1");
     this.div.classList.add("rounded-circle");
     this.div.style.backgroundColor = "plum";
     this.div.style.width = `${radius}px`;
@@ -129,7 +132,7 @@ class Triangle extends Shape{
   
       this.div.style.borderBottom= ""+(this.size) + "px solid #ffc107";
       this.div.style.borderRight = ""+(this.size) + "px solid transparent";
-     
+     this.div.classList.add("opacity-1");
         this.div.style.left = `${x}px`;
    
     this.div.style.position = "absolute";
