@@ -177,8 +177,10 @@ document.getElementById("sqrbtn").addEventListener("click", () => {
 
 document.getElementById("recbtn").addEventListener("click", () => {
   if (
-    0 <= parseInt(document.getElementById("recw").value)&&
-  parseInt(document.getElementById("rech").value) <= MAX
+    0 <= parseInt(document.getElementById("recw").value) &&
+    parseInt(document.getElementById("recw").value) <= MAX &&
+    parseInt(document.getElementById("rech").value) <= MAX &&
+    0 <= parseInt(document.getElementById("recw").value)
   )
     return new Rectangle(
       randomVal(0, MAX - parseInt(document.getElementById("recw").value)),
